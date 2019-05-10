@@ -1,24 +1,144 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-          <button id="boton_1">Holis</button>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <button id="boton_1" onclick="alertar('OH NO, PRESIONASTE UNA ALERTA')" onchange="" onmouseover="" onmouseout="" onkeydown="" onload="">Holis</button>
+    <h1 id="usuario"></h1>
+    <h2 id="caracteres"></h2>
+    <span id="especial"></span>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="/public/js/main.js"></script>
     <script>
-        //document.getElementById("boton_1").innerHTML = "MANDOM";
+        var a, b, c, A, B, C;
+        var holaDaniel;
+        var d = 'Daniel';
+        a = 5.4;
+        b = 3;
+        c = a / b; //+, -, *, /, %
+        c = (sumar(a,b)) * a;
+        A = "Hola";
+        B = " Como estas?";
+        C = A + B; // Hola Como estas?
+        var contador = 0;
+        contador = contador + 1;
+        contador++;
+        contador--;
+        contador = contador ** 2;
+
+        contador **= 2;
+        contador += 2;// /=, *=, -=, +=, %=, **=
+
+        A += B;
+
+        c = 546e-5; 
+        var meses = ["enero","febrero","marzo","abril","mayo","junio"];
+
+        var algo = new String();
+
+        var usuario = {
+            username : "leuna", 
+            firstName : "Manuel", 
+            lastName : "Figueira", 
+            age : 20, 
+            fechaNac : function(){
+                return 2019 - this.age;
+            } 
+        };
+        //window.alert(typeof(A));
+        /*
+        Comentarios multiples
+        */
+        document.getElementById("boton_1").innerHTML = d + ' ' + c; //Daniel 7
+        document.getElementById("boton_1").innerHTML = meses[3]; //Daniel 7
+        document.getElementById("usuario").innerHTML = usuario.username + ', ' + usuario.firstName + ' ' + usuario.fechaNac(); //Daniel 7
+        document.getElementById("caracteres").innerHTML = B.length;
+        var texto =  ("             Esto es un mensaje que un tal \"Manuel\"'s, \\ \n esta escribiendo "+toString(5656)).replace("Manuel","Daniel").toUpperCase().trim().split(" ")
+        document.getElementById("especial").innerHTML = texto[1];
+        var decimal = "5.46";
+        document.getElementById("especial").innerHTML = parseFloat(decimal) +5;
+        console.log('Esto es un mensaje para la consola');
+
+        var arrax = ["asda","adas","asasd"];
+        var arrax2 = ['EWE'];
+        arrax[0] = "dsads";
+        arrax.push("nuevo");
+        //arrax.shift();
+        arrax.splice(1, 1, "OPO", "UWU");
+        var eliminado = arrax.pop();
+        arrax = arrax.concat(arrax2);
+        arrax.sort();
+        arrax.reverse();
+        arrax.sort(function(a,b){return 0.5 - Math.random()});
+
+        var text = "";
+        arrax.forEach(imprimir);
+        var text = "";
+
+        var filtrado = arrax.filter(filtrar);
+        filtrado.forEach(imprimir);
+
+
+        /*var compro = arrax.every(comproTodo);
+        if(compro == true){
+            window.alert('Cumplen con el parametro');
+        }
+        var compro = arrax.some(comproTodo);
+        if(compro == false){
+            window.alert('Cumplen con el parametro');
+        }*/
+        document.getElementById("especial").innerHTML = text;
+
+        var pos = filtrado.findIndex(encontrar); //find para el valor del array y findIndex para la posicion del valor
+
+        window.alert(pos);
+
+        Array.isArray(arrax);
+        function alertar(alerta) {
+            window.alert(alerta);
+        }
+
+        function sumar(a,b){
+            return a + b;
+        }
+
+        function imprimir(value, index, array){
+            text = text + value + "<br>";
+        }
+
+        function filtrar(value, index, array){
+            return value.indexOf('a') == -1;
+        }
+
+        function comproTodo(value, index, array){
+            return value.indexOf('z') == -1;
+        }
+
+        function encontrar(value, index, array){
+            return value.indexOf('UWU') > -1;
+        }
     </script>
 </body>
+
 </html>
